@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+
+# Build files
+dist
+build
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Docker-specific files
+Dockerfile.dev
+docker-compose.yml
+docker-compose.override.yml
+
+package-lock.json
+yarn.lock
