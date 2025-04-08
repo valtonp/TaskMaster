@@ -1,0 +1,8 @@
+# Ignore Visual Studio Code specific files
+.vscode/
+*.code-workspace
+
+# Ignore IntelliJ IDEA specific files
+.idea/
+*.iml
+out/

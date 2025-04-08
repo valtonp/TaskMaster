@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 
+/*
+    Server for backend application.
+*/
+
 /**
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('./app');
 var debug = require('debug')('backend:server');
 var http = require('http');
 
