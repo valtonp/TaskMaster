@@ -18,6 +18,14 @@ enum Role {
   ADMIN
 }
 
+enum Status {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  ARCHIVED
+}
+
 model user {
   id        String   @id @default(cuid())
   name      String
@@ -32,9 +40,8 @@ model task{
   id        String   @id @default(cuid())
   title     String
   description String
-  status    String
+  status    Status   @default(PENDING)
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   userId    String
   user      user     @relation(fields: [userId], references: [id])
 }
