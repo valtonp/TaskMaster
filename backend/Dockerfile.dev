@@ -1,6 +1,8 @@
-FROM node:20.17
+FROM node:20.17-alpine
 
-RUN mkdir -p /var/www/html/
+RUN apk add --no-cache bash
+
+RUN mkdir -p /var/www/html/backend
 
 WORKDIR /var/www/html/backend
 
