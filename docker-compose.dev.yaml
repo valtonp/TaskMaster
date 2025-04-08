@@ -1,5 +1,18 @@
 
 services:
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: taskmaster
+    ports:
+      - "3306:3306"
+    networks:
+      - default
+    volumes:
+      - ./backend/mysql_data:/var/lib/mysql
+      
   backend:
     build:
       context: .
@@ -15,17 +28,8 @@ services:
       "
     networks:
       - default
-
-
-  db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: taskmaster
-    ports:
-      - "5432:5432"
-    networks:
-      - default
+    depends_on:
+      - db
 
 networks:
   default:
