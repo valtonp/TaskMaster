@@ -1,6 +1,6 @@
 const express = require('express');
 const logger = require('morgan');
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users.route');
 
 const app = express();
 
@@ -18,10 +18,8 @@ app.use((req, res, next) => {
 
 // Global error handler
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(err.status || 500).json({
-    error: err.message || 'Internal Server Error',
-  });
+  console.error(err);
+  res.status(500).json({ message: 'Internal Server Error' });
 });
 
 module.exports = app;

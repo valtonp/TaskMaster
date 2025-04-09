@@ -6,3 +6,6 @@
 .idea/
 *.iml
 out/
+
+# VsCode extensions ignore
+MySQL .session.sql
