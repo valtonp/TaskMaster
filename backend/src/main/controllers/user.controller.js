@@ -1,6 +1,6 @@
 const { serializeUsers, serializeUser } = require('../serializers/user.serializer');
 const userService = require('../services/user.service');
-const { createUserSchema, updateUserSchema } = require('../validators/user.validator');
+const { createUserSchema } = require('../validators/user.validator');
 
 const getAllUsers = async (req, res, next) => {
   try {
@@ -18,7 +18,7 @@ const createUser = async (req, res, next) => {
     res.status(201).json(serializeUser(user));
 
   }catch (error){
-    next(error)
+    next(error);
   }
 }
 
