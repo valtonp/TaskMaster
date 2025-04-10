@@ -19,11 +19,13 @@ services:
       dockerfile: ./backend/Dockerfile.dev
     volumes:
       - ./backend:/var/www/html/backend
+      - /var/www/html/backend/node_modules
     ports:
       - "3000:3000"
     command: >
       sh -c "
       npm install &&
+      npx prisma generate &&
       npm start
       "
     networks:
